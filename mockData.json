@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Eric Cortez",
+    "email": "eric.cortez@example.com",
+    "major": "Full Stack Web Development",
+    "age": "unknown",
+    "school": "SRJC"
+  },
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "major": "Computer Science",
+    "age": 20,
+    "school": "SRJC"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "major": "Mathematics",
+    "age": "unknown",
+    "school": "SRJC"
+  },
+  {
+    "name": "Emily Johnson",
+    "email": "emily.johnson@example.com",
+    "major": "Physics",
+    "age": 19,
+    "school": "SRJC"
+  }
+]

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS55.13 Week 2 Assignment</title>
+    <!-- load jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- load babel to convert React JSX to pure JS -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script data-type="module" data-presets="react" type="text/babel">
+        "use strict";
+
+        // load react
+        import React from 'https://cdn.jsdelivr.net/npm/react@19.1.1/+esm';
+        import { createRoot } from 'https://cdn.jsdelivr.net/npm/react-dom@19.1.1/client/+esm';
+
+        function App(props) {
+            return <div>
+                <h1>Student List</h1>
+                <ul>
+                    {
+                        props.list.map((item, index) => (
+                            <li key={index} style={{ marginBottom: '30px' }}>
+                                <article>
+                                    <h2 style={{ fontWeight: 'bold' }}>{item.name}</h2>
+                                    <div>Email: {item.email}</div>
+                                    <div>Major: {item.major}</div>
+                                    {typeof item.age === "number" && <div>Age: {item.age}</div>}
+                                    <div>School: {item.school}</div>
+                                </article>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div>Total Students: {props.list.length}</div>
+            </div>;
+        }
+
+        $.getJSON(
+            "x",
+            (json) => {
+                console.log(json);
+                const rootElement = document.getElementById("root");
+                const root = createRoot(rootElement);
+
+                root.render(
+                    <App list={json} />
+                );
+            }
+        )
+    </script>
+</body>
+
+</html>
